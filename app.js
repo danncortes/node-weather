@@ -1,8 +1,20 @@
-const request = require('request');
+const yargs = require('yargs');
+const geocode = require('./geocode/geocode');
 
-request({
-    url:'http://maps.googleapis.com/maps/api/geocode/json?address=av%20francisco%20de%20miranda',
-    json:true
-}, (error, response, body) => {
-    console.log(body);
+
+const argv = yargs.options({
+    a:{
+        demand:true,
+        alias: 'address',
+        describe: 'Address to fetch wheater for',
+        string: true
+    }
+});
+
+geocode.geocodeAdress(argv.address, (errorMessage, results)=>{
+    if(errorMessage){
+        console.log(errorMessage);
+    }else{
+        console.log(JSON.stringify(results, undefined, 2));
+    }
 });
