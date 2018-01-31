@@ -13,6 +13,7 @@ module.exports.geocodeAdress = (address, callback) =>{
         }else if(body.status === 'ZERO_RESULTS'){
             callback('Unable to fin that address')
         }else if(body.status === 'OK'){
+            console.log(body)
             callback(undefined, {
                 address: body.results[0].formatted_address,
                 latitud: body.results[0].geometry.location.lat,
