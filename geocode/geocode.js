@@ -11,7 +11,7 @@ module.exports.geocodeAdress = (address, callback) =>{
         if(error){
             callback('Unable to connecto to google server');
         }else if(body.status === 'ZERO_RESULTS'){
-            callback('Unable to fin that address')
+            callback('Unable to fin that address');
         }else if(body.status === 'OK'){
             callback(undefined, {
                 address: body.results[0].formatted_address,
