@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "yargs": "^11.0.0",
     "request": "^2.83.0"
   },
   "devDependencies": {
-    "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.6.0",
-    "yargs": "^11.0.0"
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

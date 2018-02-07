@@ -8,8 +8,8 @@ const argv = yargs
             demand: true,
             alias: 'address',
             describe: 'Address to fetch wheater for',
-            string: true
-        }
+            string: true,
+        },
     })
     .help()
     .alias('help', 'h')
@@ -20,10 +20,10 @@ geocode.geocodeAdress(argv.address, (errorMessage, results) => {
         console.log(errorMessage);
     } else {
         console.log(results.address);
-        weather.getWeather(results.latitude, results.longitude, (error, res)=>{
-            if(error){
+        weather.getWeather(results.latitude, results.longitude, (error, res) => {
+            if (error) {
                 console.log(error);
-            }else{
+            } else {
                 console.log(JSON.stringify(res, undefined, 2));
             }
         });
